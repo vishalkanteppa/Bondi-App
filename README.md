@@ -14,7 +14,7 @@ Bondi Companion is a small mobile application built using Ionic and Angular that
 
 1. Clone the repository
     ```bash
-    git clone https://github.com/vishalkanteppa/bondi-companion.git
+    https://github.com/vishalkanteppa/Bondi-App.git
     ```
 2. Enter the project directory
     ```bash
