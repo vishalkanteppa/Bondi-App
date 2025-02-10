@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>To-Do List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="task-card">
+    <ion-card-header>
+      <ion-card-title>Add a Task</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input [(ngModel)]="newTaskTitle" placeholder="Enter task..." (keyup.enter)="addTask()"
+          clearInput></ion-input>
+      </ion-item>
+      <ion-button expand="block" shape="round" (click)="addTask()">Add Task</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list class="task-list">
+    <ion-item *ngFor="let task of tasks; let i = index" class="task-item">
+      <ion-checkbox slot="start" [checked]="task.completed" (ionChange)="toggleTask(task)">
+      </ion-checkbox>
+
+      <ion-label [class.completed]="task.completed">{{ task.title }}</ion-label>
+
+      <ion-button slot="end" fill="clear" color="danger" (click)="deleteTask(task.id)">
+        <ion-icon src="../../assets/icon/trash-outline.svg"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

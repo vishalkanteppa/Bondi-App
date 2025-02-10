@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Bondi Companion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="welcome-container">
+    <h1>Welcome</h1>
+    <p>Seamlessly navigate and plan your day.</p>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <!-- Todo card -->
+      <ion-col size="12" size-md="6">
+        <ion-card class="feature-card" [routerLink]="['/todo']">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="list-outline" class="feature-icon"></ion-icon>
+              Plan Your Day
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Stay on top of your tasks.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <!-- Weather card -->
+      <ion-col size="12" size-md="6">
+        <ion-card class="feature-card" [routerLink]="['/weather']">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon name="partly-sunny-outline" class="feature-icon"></ion-icon>
+              Weather Insights
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Get real time weather data.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

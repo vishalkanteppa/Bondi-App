@@ -1,0 +1,83 @@
+/* styling for task card */
+.task-card {
+  margin-bottom: 20px;
+  border-radius: 16px;
+
+  ion-card-header {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  ion-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  ion-card-content {
+    padding: 16px;
+  }
+
+  ion-item {
+    --border-radius: 80px;
+  }
+
+  ion-input {
+    --padding-start: 16px;
+    font-size: 1rem;
+  }
+
+  ion-button[shape="round"] {
+    --border-radius: 24px;
+    margin-top: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+/* styling for task list */
+.task-list {
+  margin-top: 20px;
+
+  .task-item {
+    --padding-start: 16px;
+    --padding-end: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+
+    ion-label {
+      font-size: 1rem;
+      margin-right: 16px;
+      transition: color 0.3s;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: var(--ion-color-medium);
+    }
+
+    ion-button {
+      margin: 0;
+    }
+
+    ion-icon {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* fade animation for tasks */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-item {
+  animation: fadeIn 0.3s ease;
+}

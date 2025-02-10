@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Weather Forecast</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="search-container">
+    <ion-item lines="none">
+      <ion-label position="floating">Enter City</ion-label>
+      <ion-input [(ngModel)]="city" type="text" class="custom-input" (keyup.enter)="getWeather()"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="getWeather()" class="search-button">
+      Get Weather
+      <ion-icon name="search-outline" slot="end"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div *ngIf="weatherData" class="weather-card">
+    <h2 class="city-name">{{ weatherData.name }}</h2>
+    <div class="weather-icon">
+      <img
+        [src]="'http://openweathermap.org/img/w/' + weatherData.weather[0].icon + '.png'"
+        alt="Weather icon"
+      />
+    </div>
+    <div class="weather-details">
+      <p class="temperature">{{ weatherData.main.temp }}°C</p>
+      <p class="description">{{ weatherData.weather[0].description }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    <ion-icon name="alert-circle-outline"></ion-icon>
+    <p>{{ errorMessage }}</p>
+  </div>
+</ion-content>
